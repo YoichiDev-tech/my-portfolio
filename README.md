@@ -4,6 +4,11 @@ A focused, frontend‑heavy portfolio for my indie founder career.
 Built to showcase prototypes, MVPs, and launched products with a clear, honest collaboration model.
 
 
+## Screenshot
+
+![alt text](image-1.png)
+
+
 ## Tech stack
 
 - React
