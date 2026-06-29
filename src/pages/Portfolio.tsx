@@ -1,0 +1,146 @@
+import React, { FC, useState } from 'react';
+
+const Portfolio: FC = () => {
+  const [showPrototypes, setShowPrototypes] = useState(false);
+  const [showLaunched, setShowLaunched] = useState(false);
+
+  return (
+    <div className="page fade-in">
+      <section className="section">
+        <div className="section-header">
+          <h1 className="section-title neon-glow">Portfolio</h1>
+          <p className="section-subtitle">
+            A snapshot of prototypes, MVPs, and launched products built as a solo dev.
+          </p>
+        </div>
+
+        {/* Prototypes / MVPs section */}
+        <div className="glass-card portfolio-section">
+          <div className="portfolio-header">
+            <h2 className="card-title">Prototypes &amp; MVPs</h2>
+            <p className="card-body">
+              Early-stage products, proof-of-concept builds, and lean experiments that helped
+              teams validate ideas quickly.
+            </p>
+
+            <button
+              className="btn btn-secondary"
+              type="button"
+              onClick={() => setShowPrototypes(!showPrototypes)}
+            >
+              {showPrototypes ? 'Hide prototype work' : 'View prototype work'}
+            </button>
+          </div>
+
+          {/* Prototype items (hidden until button is clicked) */}
+          {showPrototypes && (
+            <div className="portfolio-grid">
+
+              {/* ⭐ WOF Form — Prototype */}
+              <div className="glass-card">
+                <h2 className="card-title">WOF Form — Prototype</h2>
+                <p className="card-body">
+                  A lightweight prototype built to validate a structured waste‑submission flow.
+                  Focused on clarity, speed, and early interaction testing before moving into a
+                  full product build.
+                </p>
+
+                {/* Links stacked with spacing */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}
+                >
+                  <a
+                    href="https://wof-form-eta.vercel.app/"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live prototype →
+                  </a>
+
+                  <a
+                    href="https://github.com/YoichiDev-tech/WOF-Form"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View code on GitHub →
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
+
+        {/* Launched Projects section */}
+        <div className="glass-card portfolio-section">
+          <div className="portfolio-header">
+            <h2 className="card-title">Launched projects</h2>
+            <p className="card-body">
+              Production deployments, live products, and long-term builds that are out in the
+              world.
+            </p>
+
+            <button
+              className="btn btn-secondary"
+              type="button"
+              onClick={() => setShowLaunched(!showLaunched)}
+            >
+              {showLaunched ? 'Hide launched work' : 'View launched work'}
+            </button>
+          </div>
+
+          {/* Launched items (hidden until button is clicked) */}
+          {showLaunched && (
+            <div className="portfolio-grid">
+
+              {/* ⭐ Cafe — Launched Project */}
+              <div className="glass-card">
+                <h2 className="card-title">Cafe — Launched Project</h2>
+                <p className="card-body">
+                  A fully deployed cafe website showcasing menu, atmosphere, and brand identity.
+                  Built as a clean, responsive, and fast front‑end experience ready for real users.
+                </p>
+
+                {/* Links stacked with spacing */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}
+                >
+                  <a
+                    href="https://cafe-seven-ruddy.vercel.app/"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live site →
+                  </a>
+
+                  <a
+                    href="https://github.com/yoichi-devjs/Cafe-"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View code on GitHub →
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Portfolio;

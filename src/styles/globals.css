@@ -1,0 +1,607 @@
+/*
+  Global styles for the neon-dark indie dev landing page.
+  Single source of truth for colors, typography, layout, and animations.
+*/
+
+/* Root variables for colors, spacing, and glow effects */
+:root {
+  --bg-main: #0a0f1f;
+  --bg-glass: rgba(15, 23, 42, 0.75);
+  --bg-glass-soft: rgba(15, 23, 42, 0.55);
+  --accent-neon: #00e5ff;
+  --accent-neon-soft: rgba(0, 229, 255, 0.6);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-subtle: rgba(148, 163, 184, 0.35);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --shadow-neon: 0 0 18px rgba(0, 229, 255, 0.7);
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.9);
+
+  --transition-fast: 150ms ease-out;
+  --transition-med: 220ms ease-out;
+
+  --spacing-page: 1.5rem;
+  --max-width: 1120px;
+}
+
+/* Global reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+/* Smooth scrolling for anchor navigation (if added later) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Root app container */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.app-main {
+  flex: 1;
+  padding: var(--spacing-page);
+}
+
+/* Page wrapper */
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 3rem;
+}
+
+/* Section headers */
+.section-header {
+  margin-bottom: 1.75rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.section-subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+/* Neon glow utility for titles */
+.neon-glow {
+  color: var(--accent-neon);
+  text-shadow: var(--shadow-neon);
+}
+
+/* Glassmorphism card base */
+.glass-card {
+  background: var(--bg-glass);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner glow accent on cards */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(0, 229, 255, 0.12),
+    transparent 55%
+  );
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Card titles and body text */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Grid layout for cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Larger screens: multi-column grid */
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .feature-card:nth-child(4),
+  .feature-card:nth-child(5),
+  .feature-card:nth-child(6) {
+    grid-column: span 1;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  margin-bottom: 3rem;
+}
+
+.hero-content {
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero actions (buttons) */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-med),
+    color var(--transition-med),
+    box-shadow var(--transition-med),
+    transform var(--transition-fast),
+    border-color var(--transition-med);
+}
+
+/* Primary neon button */
+.btn-primary {
+  background: var(--accent-neon);
+  color: #020617;
+  box-shadow: var(--shadow-neon);
+}
+
+/* Secondary button with outline */
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-neon);
+  border-color: var(--accent-neon-soft);
+}
+
+/* Button hover states with glow and subtle lift */
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.9);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+}
+
+/* Navbar styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 15, 31, 0.95),
+    rgba(10, 15, 31, 0.85)
+  );
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.navbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.75rem var(--spacing-page);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-neon-soft);
+  box-shadow: var(--shadow-neon);
+}
+
+.logo-text {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent-neon);
+}
+
+/* Desktop nav links */
+.navbar-links {
+  display: none;
+  gap: 1rem;
+}
+
+.navbar-link {
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.3rem 0.2rem;
+  transition:
+    color var(--transition-fast),
+    text-shadow var(--transition-fast);
+}
+
+/* Neon hover underline */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-neon);
+  box-shadow: var(--shadow-neon);
+  transition: width var(--transition-med);
+}
+
+.navbar-link:hover {
+  color: var(--accent-neon);
+  text-shadow: var(--shadow-neon);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* Active route styling */
+.navbar-link.active {
+  color: var(--accent-neon);
+}
+
+/* Hamburger button */
+.navbar-burger {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-neon-soft);
+  background: rgba(15, 23, 42, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow var(--transition-med),
+    background-color var(--transition-med),
+    transform var(--transition-fast);
+}
+
+.navbar-burger:hover {
+  box-shadow: var(--shadow-neon);
+  background: rgba(15, 23, 42, 1);
+}
+
+/* Burger lines */
+.burger-line {
+  width: 18px;
+  height: 2px;
+  background: var(--accent-neon);
+  border-radius: 999px;
+  transition:
+    transform var(--transition-med),
+    opacity var(--transition-med),
+    background-color var(--transition-med);
+}
+
+.line-1 {
+  transform: translateY(-4px);
+}
+
+.line-3 {
+  transform: translateY(4px);
+}
+
+/* When menu is open, animate into an X */
+.navbar-burger-open .line-1 {
+  transform: translateY(0) rotate(45deg);
+}
+
+.navbar-burger-open .line-2 {
+  opacity: 0;
+}
+
+.navbar-burger-open .line-3 {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* Mobile menu container */
+.navbar-mobile-menu {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 0.75rem;
+  transition:
+    max-height var(--transition-med),
+    opacity var(--transition-med),
+    transform var(--transition-med);
+  overflow: hidden;
+}
+
+/* Closed state: hidden and non-interactive */
+.menu-closed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+/* Open state: visible and clickable */
+.menu-open {
+  max-height: 260px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Mobile menu links */
+.navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass-soft);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(18px);
+}
+
+.navbar-mobile-link {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.3rem;
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* Neon hover for mobile links */
+.navbar-mobile-link:hover {
+  color: var(--accent-neon);
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
+}
+
+/* Accent link (Get Started) */
+.accent-link {
+  color: var(--accent-neon);
+  border: 1px solid var(--accent-neon-soft);
+}
+
+/* Desktop breakpoint: show full nav, hide burger and mobile menu */
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+  }
+
+  .navbar-burger {
+    display: none;
+  }
+
+  .navbar-mobile-menu {
+    display: none;
+  }
+}
+
+/* Footer styles */
+.footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1rem var(--spacing-page) 1.5rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 229, 255, 0.08),
+    rgba(10, 15, 31, 1)
+  );
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center; /* CENTERED */
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center; /* CENTERED */
+}
+
+.footer-subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  text-align: center; /* CENTERED */
+}
+
+/* Portfolio-specific styles */
+.portfolio-section {
+  margin-bottom: 2rem;
+}
+
+.portfolio-header {
+  margin-bottom: 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.portfolio-placeholder {
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Animations */
+
+/* Fade-in for sections and pages */
+.fade-in {
+  animation: fadeIn 420ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page-enter animation for main content */
+.page-enter {
+  animation: pageEnter 380ms ease-out;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-content {
+    padding: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.contact-input,
+.contact-textarea {
+  margin-top: 0.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+}
+
+.contact-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
