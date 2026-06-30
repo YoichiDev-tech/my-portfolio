@@ -6,13 +6,12 @@ const Footer: FC = () => {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        {/* UPDATED BRAND NAME */}
         <p className="footer-text">
-          © {year} Yoichi-HQ — Frontend-focused indie development.
+          © {year} Yoichi-HQ — Fullstack indie development.
         </p>
 
         <p className="footer-subtext">
-          Built with React, TypeScript, Vite, and a neon-dark aesthetic.
+          Built with React, TypeScript, Supabase, Vite, and a neon-dark aesthetic.
         </p>
       </div>
     </footer>

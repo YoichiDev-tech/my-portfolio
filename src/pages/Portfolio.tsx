@@ -2,25 +2,27 @@ import React, { FC, useState } from 'react';
 
 const Portfolio: FC = () => {
   const [showPrototypes, setShowPrototypes] = useState(false);
+  const [showMVPs, setShowMVPs] = useState(false);
   const [showLaunched, setShowLaunched] = useState(false);
 
   return (
     <div className="page fade-in">
       <section className="section">
+
+        {/* UPDATED HEADER */}
         <div className="section-header">
           <h1 className="section-title neon-glow">Portfolio</h1>
           <p className="section-subtitle">
-            A snapshot of prototypes, MVPs, and launched products built as a solo dev.
+            A collection of prototypes, MVPs, and launched fullstack products built as a solo developer.
           </p>
         </div>
 
-        {/* Prototypes / MVPs section */}
+        {/* Prototypes section */}
         <div className="glass-card portfolio-section">
           <div className="portfolio-header">
-            <h2 className="card-title">Prototypes &amp; MVPs</h2>
+            <h2 className="card-title">Prototypes</h2>
             <p className="card-body">
-              Early-stage products, proof-of-concept builds, and lean experiments that helped
-              teams validate ideas quickly.
+              Early-stage UI experiments and proof-of-concept builds used to validate ideas quickly.
             </p>
 
             <button
@@ -32,7 +34,6 @@ const Portfolio: FC = () => {
             </button>
           </div>
 
-          {/* Prototype items (hidden until button is clicked) */}
           {showPrototypes && (
             <div className="portfolio-grid">
 
@@ -45,14 +46,7 @@ const Portfolio: FC = () => {
                   full product build.
                 </p>
 
-                {/* Links stacked with spacing */}
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.5rem'
-                  }}
-                >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <a
                     href="https://wof-form-eta.vercel.app/"
                     className="card-link"
@@ -64,6 +58,61 @@ const Portfolio: FC = () => {
 
                   <a
                     href="https://github.com/YoichiDev-tech/WOF-Form"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View code on GitHub →
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
+
+        {/* MVPs section */}
+        <div className="glass-card portfolio-section">
+          <div className="portfolio-header">
+            <h2 className="card-title">MVPs</h2>
+            <p className="card-body">
+              Fullstack minimum viable products built to validate real business ideas with live data,
+              authentication, and production-ready workflows.
+            </p>
+
+            <button
+              className="btn btn-secondary"
+              type="button"
+              onClick={() => setShowMVPs(!showMVPs)}
+            >
+              {showMVPs ? 'Hide MVP work' : 'View MVP work'}
+            </button>
+          </div>
+
+          {showMVPs && (
+            <div className="portfolio-grid">
+
+              {/* Clientella — No-Show Prevention MVP */}
+              <div className="glass-card">
+                <h2 className="card-title">Clientella — No-Show Prevention MVP</h2>
+                <p className="card-body">
+                  A fullstack MVP designed to help appointment-based businesses reduce no-shows
+                  using confirmation tracking, risk scoring, automated cancellations, and
+                  recovered time analytics.
+                </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <a
+                    href="https://clientella-waitlist.vercel.app/"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live MVP →
+                  </a>
+
+                  <a
+                    href="https://github.com/YoichiDev-tech/clientella-waitlist"
                     className="card-link"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -95,7 +144,6 @@ const Portfolio: FC = () => {
             </button>
           </div>
 
-          {/* Launched items (hidden until button is clicked) */}
           {showLaunched && (
             <div className="portfolio-grid">
 
@@ -104,16 +152,10 @@ const Portfolio: FC = () => {
                 <h2 className="card-title">Cafe — Launched Project</h2>
                 <p className="card-body">
                   A fully deployed cafe website showcasing menu, atmosphere, and brand identity.
-                  Built as a clean, responsive, and fast front‑end experience ready for real users.
+                  Built as a clean, responsive, and fast front-end experience ready for real users.
                 </p>
 
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.5rem'
-                  }}
-                >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <a
                     href="https://cafe-seven-ruddy.vercel.app/"
                     className="card-link"
@@ -143,13 +185,7 @@ const Portfolio: FC = () => {
                   sticky navigation, footer spacing, and persistent local storage.
                 </p>
 
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.5rem'
-                  }}
-                >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <a
                     href="https://daily-agenda-offline.vercel.app/"
                     className="card-link"

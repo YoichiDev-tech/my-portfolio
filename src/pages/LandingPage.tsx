@@ -7,23 +7,25 @@ const LandingPage: FC = () => {
       <section className="section hero-section">
         <div className="hero-content glass-card">
 
-          {/* UPDATED HERO TITLE */}
+          {/* HERO TITLE */}
           <h1 className="hero-title neon-glow">
-            Frontend engineering, built with intent.
+            Fullstack Developer building real-world web applications.
           </h1>
 
-          {/* UPDATED SUBTITLE TO MATCH FRONTEND FOCUS */}
+          {/* FULLSTACK-FOCUSED SUBTITLE */}
           <p className="hero-subtitle">
-            I design and build modern, responsive frontends for teams that value clarity,
-            speed, and thoughtful execution.
+            I design and develop complete web systems — from clean, responsive interfaces
+            to robust backend logic, databases, authentication, and deployment pipelines.
+            My work focuses on clarity, reliability, and delivering production-ready results.
           </p>
 
+          {/* UPDATED CTA BUTTONS */}
           <div className="hero-actions">
             <Link to="/get-started" className="btn btn-primary">
-              Get Started
+              Start a Fullstack Project
             </Link>
             <Link to="/learn-more" className="btn btn-secondary">
-              Learn More
+              How I Build Fullstack Systems
             </Link>
           </div>
         </div>
