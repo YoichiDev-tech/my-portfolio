@@ -36,11 +36,11 @@ const Portfolio: FC = () => {
           {showPrototypes && (
             <div className="portfolio-grid">
 
-              {/* ⭐ WOF Form — Prototype */}
+              {/* WOF Form — Prototype */}
               <div className="glass-card">
                 <h2 className="card-title">WOF Form — Prototype</h2>
                 <p className="card-body">
-                  A lightweight prototype built to validate a structured waste‑submission flow.
+                  A lightweight prototype built to validate a structured waste-submission flow.
                   Focused on clarity, speed, and early interaction testing before moving into a
                   full product build.
                 </p>
@@ -107,7 +107,6 @@ const Portfolio: FC = () => {
                   Built as a clean, responsive, and fast front‑end experience ready for real users.
                 </p>
 
-                {/* Links stacked with spacing */}
                 <div
                   style={{
                     display: 'flex',
@@ -126,6 +125,42 @@ const Portfolio: FC = () => {
 
                   <a
                     href="https://github.com/yoichi-devjs/Cafe-"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View code on GitHub →
+                  </a>
+                </div>
+              </div>
+
+              {/* ⭐ Daily Agenda — Launched Project */}
+              <div className="glass-card">
+                <h2 className="card-title">Daily Agenda & micro‑CRM — Launched Project</h2>
+                <p className="card-body">
+                  A fully functional offline‑first agenda and micro‑CRM designed for solo operators.
+                  Includes daily appointments, tasks, client management, mobile‑optimized UI,
+                  sticky navigation, footer spacing, and persistent local storage.
+                </p>
+
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
+                  }}
+                >
+                  <a
+                    href="https://daily-agenda-offline.vercel.app/"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live app →
+                  </a>
+
+                  <a
+                    href="https://github.com/YoichiDev-tech/Daily-Agenda-Offline"
                     className="card-link"
                     target="_blank"
                     rel="noopener noreferrer"

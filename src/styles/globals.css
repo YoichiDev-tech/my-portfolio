@@ -45,7 +45,7 @@ body {
     sans-serif;
 }
 
-/* Smooth scrolling for anchor navigation (if added later) */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -92,13 +92,13 @@ html {
   max-width: 640px;
 }
 
-/* Neon glow utility for titles */
+/* Neon glow utility */
 .neon-glow {
   color: var(--accent-neon);
   text-shadow: var(--shadow-neon);
 }
 
-/* Glassmorphism card base */
+/* Glassmorphism card */
 .glass-card {
   background: var(--bg-glass);
   border-radius: var(--radius-lg);
@@ -110,7 +110,6 @@ html {
   overflow: hidden;
 }
 
-/* Subtle inner glow accent on cards */
 .glass-card::before {
   content: '';
   position: absolute;
@@ -124,7 +123,7 @@ html {
   pointer-events: none;
 }
 
-/* Card titles and body text */
+/* Card titles */
 .card-title {
   font-size: 1.2rem;
   font-weight: 500;
@@ -137,23 +136,16 @@ html {
   line-height: 1.6;
 }
 
-/* Grid layout for cards */
+/* Grid layout */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-/* Larger screens: multi-column grid */
 @media (min-width: 768px) {
   .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .feature-card:nth-child(4),
-  .feature-card:nth-child(5),
-  .feature-card:nth-child(6) {
-    grid-column: span 1;
   }
 }
 
@@ -179,7 +171,7 @@ html {
   margin-bottom: 1.5rem;
 }
 
-/* Hero actions (buttons) */
+/* Hero actions */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -206,21 +198,18 @@ html {
     border-color var(--transition-med);
 }
 
-/* Primary neon button */
 .btn-primary {
   background: var(--accent-neon);
   color: #020617;
   box-shadow: var(--shadow-neon);
 }
 
-/* Secondary button with outline */
 .btn-secondary {
   background: transparent;
   color: var(--accent-neon);
   border-color: var(--accent-neon-soft);
 }
 
-/* Button hover states with glow and subtle lift */
 .btn:hover {
   transform: translateY(-1px);
 }
@@ -234,7 +223,7 @@ html {
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
 }
 
-/* Navbar styles */
+/* Navbar */
 .navbar {
   position: sticky;
   top: 0;
@@ -296,7 +285,6 @@ html {
     text-shadow var(--transition-fast);
 }
 
-/* Neon hover underline */
 .navbar-link::after {
   content: '';
   position: absolute;
@@ -318,12 +306,11 @@ html {
   width: 100%;
 }
 
-/* Active route styling */
 .navbar-link.active {
   color: var(--accent-neon);
 }
 
-/* Hamburger button */
+/* Hamburger */
 .navbar-burger {
   width: 40px;
   height: 40px;
@@ -346,7 +333,6 @@ html {
   background: rgba(15, 23, 42, 1);
 }
 
-/* Burger lines */
 .burger-line {
   width: 18px;
   height: 2px;
@@ -366,7 +352,6 @@ html {
   transform: translateY(4px);
 }
 
-/* When menu is open, animate into an X */
 .navbar-burger-open .line-1 {
   transform: translateY(0) rotate(45deg);
 }
@@ -391,7 +376,7 @@ html {
   overflow: hidden;
 }
 
-/* Closed state: hidden and non-interactive */
+/* Closed state */
 .menu-closed {
   max-height: 0;
   opacity: 0;
@@ -399,12 +384,27 @@ html {
   transform: translateY(-8px);
 }
 
-/* Open state: visible and clickable */
+/* OPEN STATE — FULLSCREEN FIX */
 .menu-open {
-  max-height: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 1.5rem;
+
+  background: rgba(10, 15, 31, 0.92);
+  backdrop-filter: blur(14px);
+
+  z-index: 9999;
+
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+
+  overflow-y: auto;
 }
 
 /* Mobile menu links */
@@ -431,20 +431,26 @@ html {
     box-shadow var(--transition-fast);
 }
 
-/* Neon hover for mobile links */
 .navbar-mobile-link:hover {
   color: var(--accent-neon);
   background: rgba(0, 229, 255, 0.08);
   box-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
 }
 
-/* Accent link (Get Started) */
-.accent-link {
-  color: var(--accent-neon);
-  border: 1px solid var(--accent-neon-soft);
+/* Backdrop */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9998;
 }
 
-/* Desktop breakpoint: show full nav, hide burger and mobile menu */
+/* Desktop breakpoint */
 @media (min-width: 768px) {
   .navbar-links {
     display: flex;
@@ -459,7 +465,7 @@ html {
   }
 }
 
-/* Footer styles */
+/* Footer */
 .footer {
   border-top: 1px solid rgba(148, 163, 184, 0.35);
   padding: 1rem var(--spacing-page) 1.5rem;
@@ -473,23 +479,23 @@ html {
 .footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  text-align: center; /* CENTERED */
+  text-align: center;
 }
 
 .footer-text {
   font-size: 0.85rem;
   color: var(--text-muted);
-  text-align: center; /* CENTERED */
+  text-align: center;
 }
 
 .footer-subtext {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
-  text-align: center; /* CENTERED */
+  text-align: center;
 }
 
-/* Portfolio-specific styles */
+/* Portfolio */
 .portfolio-section {
   margin-bottom: 2rem;
 }
@@ -513,8 +519,6 @@ html {
 }
 
 /* Animations */
-
-/* Fade-in for sections and pages */
 .fade-in {
   animation: fadeIn 420ms ease-out;
 }
@@ -530,7 +534,6 @@ html {
   }
 }
 
-/* Page-enter animation for main content */
 .page-enter {
   animation: pageEnter 380ms ease-out;
 }
