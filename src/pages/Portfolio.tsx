@@ -9,7 +9,6 @@ const Portfolio: FC = () => {
     <div className="page fade-in">
       <section className="section">
 
-        {/* UPDATED HEADER */}
         <div className="section-header">
           <h1 className="section-title neon-glow">Portfolio</h1>
           <p className="section-subtitle">
@@ -122,6 +121,35 @@ const Portfolio: FC = () => {
                 </div>
               </div>
 
+              <div className="glass-card">
+                <h2 className="card-title">Daily Agenda & micro-CRM — MVP</h2>
+                <p className="card-body">
+                  An offline-first agenda and micro-CRM designed for solo operators.
+                  Includes daily appointments, tasks, client management, mobile-optimized UI,
+                  sticky navigation, footer spacing, and persistent local storage.
+                </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <a
+                    href="https://daily-agenda-offline.vercel.app/"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live MVP →
+                  </a>
+
+                  <a
+                    href="https://github.com/YoichiDev-tech/Daily-Agenda-Offline"
+                    className="card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View code on GitHub →
+                  </a>
+                </div>
+              </div>
+
             </div>
           )}
         </div>
@@ -129,7 +157,7 @@ const Portfolio: FC = () => {
         {/* Launched Projects section */}
         <div className="glass-card portfolio-section">
           <div className="portfolio-header">
-            <h2 className="card-title">Launched projects</h2>
+            <h2 className="card-title">Shipped projects</h2>
             <p className="card-body">
               Production deployments, live products, and long-term builds that are out in the
               world.
@@ -167,36 +195,6 @@ const Portfolio: FC = () => {
 
                   <a
                     href="https://github.com/yoichi-devjs/Cafe-"
-                    className="card-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View code on GitHub →
-                  </a>
-                </div>
-              </div>
-
-              {/* Daily Agenda — Launched Project */}
-              <div className="glass-card">
-                <h2 className="card-title">Daily Agenda & micro-CRM — Launched Project</h2>
-                <p className="card-body">
-                  A fully functional offline-first agenda and micro-CRM designed for solo operators.
-                  Includes daily appointments, tasks, client management, mobile-optimized UI,
-                  sticky navigation, footer spacing, and persistent local storage.
-                </p>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <a
-                    href="https://daily-agenda-offline.vercel.app/"
-                    className="card-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View live app →
-                  </a>
-
-                  <a
-                    href="https://github.com/YoichiDev-tech/Daily-Agenda-Offline"
                     className="card-link"
                     target="_blank"
                     rel="noopener noreferrer"
