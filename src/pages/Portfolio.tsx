@@ -99,7 +99,7 @@ const Portfolio: FC = () => {
           {showLaunched && (
             <div className="portfolio-grid">
 
-              {/* ⭐ Cafe — Launched Project */}
+              {/* Cafe — Launched Project */}
               <div className="glass-card">
                 <h2 className="card-title">Cafe — Launched Project</h2>
                 <p className="card-body">
@@ -134,12 +134,12 @@ const Portfolio: FC = () => {
                 </div>
               </div>
 
-              {/* ⭐ Daily Agenda — Launched Project */}
+              {/* Daily Agenda — Launched Project */}
               <div className="glass-card">
-                <h2 className="card-title">Daily Agenda & micro‑CRM — Launched Project</h2>
+                <h2 className="card-title">Daily Agenda & micro-CRM — Launched Project</h2>
                 <p className="card-body">
-                  A fully functional offline‑first agenda and micro‑CRM designed for solo operators.
-                  Includes daily appointments, tasks, client management, mobile‑optimized UI,
+                  A fully functional offline-first agenda and micro-CRM designed for solo operators.
+                  Includes daily appointments, tasks, client management, mobile-optimized UI,
                   sticky navigation, footer spacing, and persistent local storage.
                 </p>
 
