@@ -11,6 +11,7 @@ const WorkWithMe: FC = () => {
           </p>
         </div>
 
+        {/* Spacing wrapper */}
         <div className="card-grid">
 
           <div className="glass-card">
