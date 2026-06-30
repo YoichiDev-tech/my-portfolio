@@ -31,12 +31,17 @@ Built to showcase prototypes, MVPs, and launched products with a clear, honest c
 
 ## Portfolio behavior
 
-- **Prototypes & MVPs**
+- **Prototypes**
   - Section is visible
   - Items are hidden until the user clicks **“View prototype work”**
   - Card: **WOF Form — Prototype** with live link + GitHub link
 
-- **Launched projects**
+  - **MVPs**
+    - Section is visible
+    - Items are hidden until the user clicks **View MVP work**
+    - Card: **Clientella - No-Show Prevention System** with live link + GitHub link
+
+- **Shipped projects**
   - Section is visible
   - Items are hidden until the user clicks **“View launched work”**
   - Card: **Cafe — Launched Project** with live link + GitHub link
